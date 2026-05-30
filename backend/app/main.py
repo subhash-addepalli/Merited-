@@ -14,13 +14,12 @@ app.add_middleware(
         "http://localhost:3000",
         "https://merited-phi.vercel.app",
     ],
-    allow_credentials=True,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 app.include_router(profile.router, prefix="/api/v1", tags=["profile"])
-
 
 @app.get("/health")
 def health():
